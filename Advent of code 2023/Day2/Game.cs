@@ -9,4 +9,13 @@ public class Game
     {
         return Rounds.All(round => round.BlueCubes <= blue && round.RedCubes <= red && round.GreenCubes <= green);
     }
+
+    public int MinimumSetPower()
+    {
+        var red = Rounds.Max(round => round.RedCubes);
+        var green = Rounds.Max(round => round.GreenCubes);
+        var blue = Rounds.Max(round => round.BlueCubes);
+
+        return red * green * blue;
+    }
 }
